@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling App</title>
+</head>
+<body>
+    <h1>Polling App</h1>
+    <form action="{{ url_for('vote') }}" method="post">
+        <label>
+            <input type="radio" name="option" value="option1"> Option 1
+        </label><br>
+        <label>
+            <input type="radio" name="option" value="option2"> Option 2
+        </label><br>
+        <label>
+            <input type="radio" name="option" value="option3"> Option 3
+        </label><br>
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>

@@ -30,5 +30,12 @@ def add_option():
     r.sadd('options', new_option)
     return redirect(url_for('index'))
 
+@app.route('/delete_option', methods=['POST'])
+def delete_option():
+    delete_option = request.form['delete_option']
+    r.srem('options', delete_option)
+    r.delete(delete_option)
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling App</title>
+</head>
+<body>
+    <h1>Polling App</h1>
+    <form action="{{ url_for('vote') }}" method="post">
+        {% for option in options %}
+        <label>
+            <input type="radio" name="option" value="{{ option }}"> {{ option }}
+        </label><br>
+        {% endfor %}
+        <button type="submit">Vote</button>
+    </form>
+
+    <h2>Add New Option</h2>
+    <form action="{{ url_for('add_option') }}" method="post">
+        <input type="text" name="new_option" placeholder="New Option" required>
+        <button type="submit">Add Option</button>
+    </form>
+</body>
+</html>
